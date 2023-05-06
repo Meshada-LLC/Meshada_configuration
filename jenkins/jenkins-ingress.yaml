@@ -7,13 +7,13 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-  - host: dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
-    http:
-       paths:
-       - path: /
-         pathType: Prefix
-         backend:
-           service:
-             name: jenkins
-             port:
-               number: 8080
+    - host: dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+      http:
+        paths:
+          - path: /jenkins
+            pathType: Exact
+            backend:
+              service:
+                name: jenkins
+                port:
+                  number: 8080
