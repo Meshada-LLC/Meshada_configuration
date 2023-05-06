@@ -17,3 +17,10 @@ spec:
                 name: jenkins
                 port:
                   number: 8080
+          - path: /kibana
+            pathType: Exact
+            backend:
+              service:
+                name: quickstart-kb-http
+                port:
+                  number: 5601
