@@ -23,10 +23,10 @@ spec:
     - host: dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
-          - path: /elastic
+          - path: /kibana
             pathType: Prefix
             backend:
               service:
-                name: quickstart-es-http
+                name: quickstart-ekb-http
                 port:
-                  number: 9200
+                  number: 5600
