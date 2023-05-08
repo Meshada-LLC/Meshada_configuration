@@ -15,7 +15,6 @@ metadata:
   namespace: default
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
-    kubernetes.io/ingress.class: traefik
 spec:
   rules:
     - host: dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
