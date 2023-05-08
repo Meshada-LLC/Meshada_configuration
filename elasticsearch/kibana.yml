@@ -13,13 +13,15 @@ kind: Ingress
 metadata:
   name: kibana-ingress
   namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
 spec:
   rules:
-    - host: quickstart-kb-http.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+    - host: kidea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
-          - path: /
-            pathType: Exact
+          - path: /kibana
+            pathType: Prefix
             backend:
               service:
                 name: quickstart-kb-http
