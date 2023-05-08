@@ -17,7 +17,7 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-    - host: dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+    - host: kibana.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
           - path: /
@@ -26,4 +26,4 @@ spec:
               service:
                 name: quickstart-kb-http
                 port:
-                  number: 80
+                  number: 5601
