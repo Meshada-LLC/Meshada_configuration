@@ -26,4 +26,4 @@ spec:
               service:
                 name: quickstart-kb-http
                 port:
-                  number: 5601
+                  number: 80
