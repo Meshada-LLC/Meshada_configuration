@@ -15,7 +15,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: quickstart.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+    - host: quickstart-kb-http.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
           - path: /
