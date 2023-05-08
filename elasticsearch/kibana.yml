@@ -15,6 +15,7 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
     - host: kibana.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
