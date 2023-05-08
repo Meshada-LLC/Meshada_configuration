@@ -15,7 +15,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: Kibana.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+    - host: kibana-ingress.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
           - path: /
