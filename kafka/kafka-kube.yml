@@ -47,3 +47,24 @@ spec:
     - protocol: TCP
       port: 9092
       targetPort: 9092
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kibana-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: kafka.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: kafka-service
+                port:
+                  number: 9092
