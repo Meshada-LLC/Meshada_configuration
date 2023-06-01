@@ -44,3 +44,7 @@ spec:
                 name: quickstart-kb-http
                 port:
                   number: 5601
+status:
+  loadBalancer:
+    ingress:
+      - hostname: 6a554592-68d8-49e2-9fdb-80aaa1464d0f.lb.civo.com
