@@ -39,7 +39,7 @@ spec:
   tls:
     - hosts:
         - jenkins-staging.meshada.com
-      secretName: jenkins-ingress-secret
+      secretName: jenkins-staging
 
       # - host: kibana-staging.meshada.com
       #   http:
