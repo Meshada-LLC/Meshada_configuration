@@ -4,10 +4,10 @@ metadata:
   name: quickstart
 spec:
   version: 8.8.0
-  http:
-    service:
-      spec:
-        type: LoadBalancer
+  # http:
+  #   service:
+  #     spec:
+  #       type: LoadBalancer
   count: 1
   elasticsearchRef:
     name: quickstart
