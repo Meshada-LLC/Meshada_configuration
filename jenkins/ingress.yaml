@@ -33,7 +33,7 @@ spec:
               service:
                 name: jenkins
                 port:
-                  number: 8081
+                  number: 8080
     - host: kibana-staging.meshada.com
       http:
         paths:
