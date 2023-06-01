@@ -1,50 +1,46 @@
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: my-ingress
-#   namespace: default
-#   annotations:
-#     kubernetes.io/ingress.class: traefik
-# spec:
-#   rules:
-#     # - host: www.meshada.com
-#     #   http:
-#     #     paths:
-#     #       - path: /api
-#     #         pathType: Prefix
-#     #         backend:
-#     #           service:
-#     #             name: meshada-api
-#     #             port:
-#     #               number: 8090
-#     #       - path: /
-#     #         pathType: Prefix
-#     #         backend:
-#     #           service:
-#     #             name: service2
-#     #             port:
-#     #               number: 80
-#     - host: jenkins-staging.meshada.com
-#       http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: jenkins
-#                 port:
-#                   number: 8080
-#     - host: kibana-staging.meshada.com
-#       http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: quickstart-kb-http
-#                 port:
-#                   number: 5601
-# status:
-#   loadBalancer:
-#     ingress:
-#       - hostname: 6a554592-68d8-49e2-9fdb-80aaa1464d0f.lb.civo.com
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    # - host: www.meshada.com
+    #   http:
+    #     paths:
+    #       - path: /api
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: meshada-api
+    #             port:
+    #               number: 8090
+    #       - path: /
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: service2
+    #             port:
+    #               number: 80
+    - host: jenkins-staging.meshada.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jenkins
+                port:
+                  number: 80
+    - host: kibana-staging.meshada.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: quickstart-kb-http
+                port:
+                  number: 80
