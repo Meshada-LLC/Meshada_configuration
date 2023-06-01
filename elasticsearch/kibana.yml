@@ -18,10 +18,10 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: default.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+    - host: kibana.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
-          - path: /kibana
+          - path: /
             pathType: Prefix
             backend:
               service:

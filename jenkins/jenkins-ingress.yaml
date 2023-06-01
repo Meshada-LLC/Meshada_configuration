@@ -7,7 +7,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-    - host: jenkins.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+    - host: jjenk.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
           - path: /
