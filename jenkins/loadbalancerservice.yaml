@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: meshadaLoadBalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: quickstart-kb-http
+  ports:
+    - protocol: TCP
+      port: 5601
+      targetPort: 5601
+      name: quickstart-kb-http
