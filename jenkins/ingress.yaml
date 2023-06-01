@@ -6,6 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: web
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
     # - host: www.meshada.com
@@ -35,16 +36,21 @@ spec:
                 name: jenkins
                 port:
                   number: 8080
-    # - host: kibana-staging.meshada.com
-    #   http:
-    #     paths:
-    #       - path: /
-    #         pathType: Prefix
-    #         backend:
-    #           service:
-    #             name: quickstart-kb-http
-    #             port:
-    #               number: 5601
+  tls:
+    - hosts:
+        - jenkins-staging.meshada.com
+      secretName: jenkins-ingress-secret
+
+      # - host: kibana-staging.meshada.com
+      #   http:
+      #     paths:
+      #       - path: /
+      #         pathType: Prefix
+      #         backend:
+      #           service:
+      #             name: quickstart-kb-http
+      #             port:
+      #               number: 5601
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
