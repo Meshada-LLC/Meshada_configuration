@@ -22,7 +22,7 @@ spec:
       http:
         paths:
           - path: /kibana
-            pathType: Exact
+            pathType: Prefix
             backend:
               service:
                 name: quickstart-kb-http

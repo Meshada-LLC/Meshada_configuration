@@ -10,10 +10,10 @@ spec:
     - host: jenkins.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
       http:
         paths:
-          - path: /
+          - path: /jenkins
             pathType: Prefix
             backend:
               service:
                 name: jenkins
                 port:
-                  number: 8080
+                  number: 80
