@@ -8,6 +8,10 @@ spec:
     app: quickstart-kb-http
   ports:
     - protocol: TCP
-      port: 5601
+      port: 80
       targetPort: 5601
       name: quickstart-kb-http
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      name: jenkins
