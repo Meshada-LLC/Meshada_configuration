@@ -59,8 +59,8 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: web
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
     # - host: www.meshada.com
@@ -100,3 +100,7 @@ spec:
                 name: quickstart-kb-http
                 port:
                   number: 5601
+  tls:
+    - hosts:
+        - kibana-staging.meshada.com
+      secretName: kibana-staging
