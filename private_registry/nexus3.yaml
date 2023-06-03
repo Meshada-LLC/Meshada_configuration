@@ -78,7 +78,7 @@ kind: Service
 metadata:
   name: nexus-service
   namespace: devops-tools
-  annotations:
+  # annotations:
   #     prometheus.io/scrape: "true"
   #     prometheus.io/path: /
   #     prometheus.io/port: "8081"
