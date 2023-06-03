@@ -67,8 +67,8 @@ spec:
               service:
                 name: argocd-server
                 port:
-                  name: http
+                  name: https
   tls:
     - hosts:
         - devtools-meshada-argocd-staging.meshada.com
-      secretName: devtools-meshada-argocd-staging
+      secretName: argocd-secret
