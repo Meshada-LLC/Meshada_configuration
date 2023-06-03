@@ -82,11 +82,11 @@ metadata:
   #     prometheus.io/scrape: "true"
   #     prometheus.io/path: /
   #     prometheus.io/port: "8081"
-  spec:
-    selector:
-      app: nexus-server
-    type: NodePort
-    ports:
-      - port: 8081
-        targetPort: 8081
-        nodePort: 32000
+spec:
+  selector:
+    app: nexus-server
+  type: NodePort
+  ports:
+    - port: 8081
+      targetPort: 8081
+      nodePort: 32000
