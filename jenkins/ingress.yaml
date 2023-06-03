@@ -70,7 +70,7 @@ spec:
               service:
                 name: argocd-server
                 port:
-                  name: https
+                  name: http
   tls:
     - hosts:
         - devtools-meshada-argocd-staging.meshada.com
