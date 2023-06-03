@@ -58,6 +58,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # kubernetes.io/tls-acme: "true"
     ingress.kubernetes.io/ssl-redirect: "false"
+    # nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
     - host: devtools-meshada-argocd-staging.meshada.com
@@ -69,7 +70,7 @@ spec:
               service:
                 name: argocd-server
                 port:
-                  name: http
+                  name: https
   tls:
     - hosts:
         - devtools-meshada-argocd-staging.meshada.com
