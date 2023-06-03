@@ -56,9 +56,10 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
-    - host: kafka.dea66ec9-3b25-4048-bb4b-e3340ffd6b3a.k8s.civo.com
+    - host: kafka-staging.meshada.com
       http:
         paths:
           - path: /
@@ -68,3 +69,7 @@ spec:
                 name: kafka-service
                 port:
                   number: 9092
+  tls:
+    - hosts:
+        - kafka-staging.meshada.com
+      secretName: kafka-secret
