@@ -48,10 +48,11 @@ spec:
     app: nexus-server
   type: ClusterIP
   ports:
-    - port: 8081
+    - name: port-8081
+      port: 8081
       targetPort: 8081
-      # nodePort: 32000
-    - port: 8082
+    - name: port-8082
+      port: 8082
       targetPort: 8082
 ---
 apiVersion: networking.k8s.io/v1
