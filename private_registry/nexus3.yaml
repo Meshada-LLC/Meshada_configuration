@@ -66,7 +66,6 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 8081
-            - containerPort: 8082
           volumeMounts:
             - name: nexus-data
               mountPath: /nexus-data
@@ -90,25 +89,7 @@ spec:
   ports:
     - port: 8081
       targetPort: 8081
-      # nodePort: 32000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nexus-image-service
-  namespace: devops-tools
-  # annotations:
-  #     prometheus.io/scrape: "true"
-  #     prometheus.io/path: /
-  #     prometheus.io/port: "8081"
-spec:
-  selector:
-    app: nexus-server
-  type: ClusterIP
-  ports:
-    - port: 8082
-      targetPort: 8082
-      # nodePort: 32005
+      nodePort: 32000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -134,28 +115,3 @@ spec:
     - hosts:
         - docker-staging.meshada.com
       secretName: docker-staging-secret
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nexus-image-ingress
-  namespace: devops-tools
-  annotations:
-    kubernetes.io/ingress.class: traefik
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-spec:
-  rules:
-    - host: image.meshada.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: nexus-image-service
-                port:
-                  number: 8082
-  tls:
-    - hosts:
-        - image.meshada.com
-      secretName: docker-image-secret
