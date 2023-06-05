@@ -52,8 +52,8 @@ spec:
       port: 8081
       targetPort: 8081
     - name: port-8082
-      port: 8082
-      targetPort: 8082
+      port: 8083
+      targetPort: 8083
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -75,14 +75,32 @@ spec:
                 name: nexus-service
                 port:
                   number: 8081
-          - path: /images
+  tls:
+    - hosts:
+        - docker-staging.meshada.com
+      secretName: docker-staging-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nexus-ingress
+  namespace: devops-tools
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: image.meshada.com
+      http:
+        paths:
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: nexus-service
                 port:
-                  number: 8082
+                  number: 8083
   tls:
     - hosts:
-        - docker-staging.meshada.com
-      secretName: docker-staging-secret
+        - image.meshada.com
+      secretName: docker-image-secret
