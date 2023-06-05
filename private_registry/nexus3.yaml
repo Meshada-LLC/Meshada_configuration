@@ -131,17 +131,32 @@ spec:
                 name: nexus-service
                 port:
                   number: 8081
-    - host: docker-staging.meshada.com
-      http:
-        paths:
-          - path: /repository/nexus-docker/
-            pathType: Prefix
-            backend:
-              service:
-                name: nexus-service
-                port:
-                  number: 5000
   tls:
     - hosts:
         - docker-staging.meshada.com
       secretName: docker-staging-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nexus-ingress
+  namespace: devops-tools
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: image.meshada.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nexus-image-service
+                port:
+                  number: 5000
+  tls:
+    - hosts:
+        - image.meshada.com
+      secretName: docker-image-secret
