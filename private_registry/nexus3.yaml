@@ -75,7 +75,7 @@ spec:
                 name: nexus-service
                 port:
                   number: 8081
-          - path: /
+          - path: /images
             pathType: Prefix
             backend:
               service:
