@@ -11,3 +11,28 @@ spec:
   count: 1
   elasticsearchRef:
     name: quickstart
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kibana-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: kibana-staging.meshada.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: quickstart-kb-http
+                port:
+                  number: 5601
+  tls:
+    - hosts:
+        - kibana-staging.meshada.com
+      secretName: kibana-staging

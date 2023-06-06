@@ -23,7 +23,7 @@ kind: Deployment
 metadata:
   name: mysql
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
