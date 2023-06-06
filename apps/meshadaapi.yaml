@@ -8,7 +8,7 @@ spec:
       image: image.meshada.com/meshadaapi:prod
       ports:
         - containerPort: 8080
-  imagePullPolicy: Always
+    imagePullPolicy: Always
   imagePullSecrets:
     - name: dockercred
 ---
