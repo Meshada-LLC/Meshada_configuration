@@ -4,7 +4,7 @@ metadata:
   name: mesdadaapi
 spec:
   containers:
-    - name: meshadaml
+    - name: meshadapi
       image: age.meshada.com/meshadasshadaapi:prod
       ports:
         - containerPort: 8080
@@ -14,7 +14,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mesdadapi-service
+  name: mesdadaapi-service
 spec:
   selector:
     app: mesdadaapi
