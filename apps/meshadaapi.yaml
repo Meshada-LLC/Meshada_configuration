@@ -4,8 +4,8 @@ metadata:
   name: mesdadaapi
 spec:
   containers:
-    - name: meshadapi
-      image: age.meshada.com/meshadasshadaapi:prod
+    - name: mesdadaapi
+      image: image.meshada.com/meshadaapi:prod
       ports:
         - containerPort: 8080
   imagePullSecrets:

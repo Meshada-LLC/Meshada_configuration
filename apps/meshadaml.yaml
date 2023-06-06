@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mesdadaml
+  name: meshadasparkml
 spec:
   containers:
-    - name: meshadaml
-      image: age.meshada.com/meshadasparkml:prod
+    - name: meshadasparkml
+      image: image.meshada.com/meshadasparkml:prod
       ports:
         - containerPort: 8090
   imagePullSecrets:
@@ -14,10 +14,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mesdadaml-service
+  name: meshadasparkml-service
 spec:
   selector:
-    app: mesdadaml
+    app: meshadasparkml
   ports:
     - protocol: TCP
       port: 8090
