@@ -6,9 +6,9 @@ spec:
   containers:
     - name: meshadasparkml
       image: image.meshada.com/meshadasparkml:prod
+      imagePullPolicy: Always
       ports:
         - containerPort: 8090
-    imagePullPolicy: Always
   imagePullSecrets:
     - name: dockercred
 ---
