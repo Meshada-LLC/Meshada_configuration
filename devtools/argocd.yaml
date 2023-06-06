@@ -60,7 +60,7 @@ spec:
               service:
                 name: argo-cd-argocd-server
                 port:
-                  name: 8011
+                  number: 8011
   # tls:
   #   - hosts:
   #       - devtools-meshada-argocd-staging.meshada.com
