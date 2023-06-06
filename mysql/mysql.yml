@@ -1,4 +1,12 @@
 apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secret
+type: Opaque
+data:
+  password: Fredponksa51$
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
@@ -15,6 +23,7 @@ kind: Deployment
 metadata:
   name: mysql
 spec:
+  replica: 1
   selector:
     matchLabels:
       app: mysql
@@ -30,7 +39,10 @@ spec:
           name: mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: Fredponksa51$
+              valueFrom:
+                secretKeyRef:
+                name: mysql-secret
+                key: password
           ports:
             - containerPort: 3306
               name: mysql

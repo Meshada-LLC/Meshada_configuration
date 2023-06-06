@@ -1,8 +1,0 @@
-replicaCount: 1
-persistence:
-  enabled: true
-  size: 5Gi
-  deleteEnabled: true
-  existingClaim: docker-registry-pvc
-secrets:
-  htpasswd: admin:$2y$05$E5QPR8ftVq8qa2UlRfDtruxxYgasoJCelxi6fW3kgPaSzcZL.8PVC
