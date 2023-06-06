@@ -1,16 +1,26 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: mesdadaapi
+  name: mesdadaapi-deployment
 spec:
-  containers:
-    - name: mesdadaapi
-      image: image.meshada.com/meshadaapi:prod
-      imagePullPolicy: Always
-      ports:
-        - containerPort: 8080
-  imagePullSecrets:
-    - name: dockercred
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mesdadaapi
+  template:
+    metadata:
+      labels:
+        app: mesdadaapi
+    spec:
+      containers:
+        - name: mesdadaapi
+          image: image.meshada.com/meshadaapi:prod
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: dockercred
+
 ---
 apiVersion: v1
 kind: Service

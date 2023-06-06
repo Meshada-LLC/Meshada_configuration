@@ -1,16 +1,26 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: meshadasparkml
+  name: meshadasparkml-deployment
 spec:
-  containers:
-    - name: meshadasparkml
-      image: image.meshada.com/meshadasparkml:prod
-      imagePullPolicy: Always
-      ports:
-        - containerPort: 8090
-  imagePullSecrets:
-    - name: dockercred
+  replicas: 3
+  selector:
+    matchLabels:
+      app: meshadasparkml
+  template:
+    metadata:
+      labels:
+        app: meshadasparkml
+    spec:
+      containers:
+        - name: meshadasparkml
+          image: image.meshada.com/meshadasparkml:prod
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8090
+      imagePullSecrets:
+        - name: dockercred
+
 ---
 apiVersion: v1
 kind: Service
