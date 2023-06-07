@@ -20,6 +20,13 @@ spec:
               containerPort: 8080
             - name: jnlp-port
               containerPort: 50000
+          resources:
+            limits:
+              cpu: "2"
+              memory: "4Gi"
+            requests:
+              cpu: "1"
+              memory: "2Gi"
           volumeMounts:
             - name: jenkins-vol
               mountPath: /var/jenkins_vol
