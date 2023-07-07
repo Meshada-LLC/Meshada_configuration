@@ -15,15 +15,15 @@ spec:
         app: meshada-apps
     spec:
       containers:
-        - image: registry.digitalocean.com/meshada-registry/meshadaweb
+        - image: registry.digitalocean.com/meshada-registry/meshadaweb:latest
           name: meshadaweb
           ports:
             - containerPort: 4000
-        - image: registry.digitalocean.com/meshada-registry/meshadaapi
+        - image: registry.digitalocean.com/meshada-registry/meshadaapi:latest
           name: meshadaapi
           ports:
             - containerPort: 9090
-        - image: registry.digitalocean.com/meshada-registry/meshadaml
+        - image: registry.digitalocean.com/meshada-registry/meshadaml:latest
           name: meshadaml
           ports:
             - containerPort: 8090
