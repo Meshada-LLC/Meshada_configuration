@@ -16,6 +16,7 @@ spec:
                 - /bin/sh
                 - -c
                 - |
+                  curl -s -X GET https://www.meshada.com/api/store/pepperstore & 
                   curl -s -X GET https://www.meshada.com/api/pepper/find/6196 &
                   curl -s -X GET https://www.meshada.com/api/pepper/find/5423 &
                   curl -s -X GET https://www.meshada.com/api/pepper/find/8280 &
