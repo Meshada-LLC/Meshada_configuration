@@ -8,7 +8,7 @@ spec:
   #   service:
   #     spec:
   #       type: LoadBalancer
-  count: 2
+  count: 1
   elasticsearchRef:
     name: quickstart
   enterpriseSearchRef:
