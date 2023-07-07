@@ -108,13 +108,13 @@ spec:
     spec:
       containers:
         - name: enterprise-search
-          resources:
-            requests:
-              memory: 2Gi
-              cpu: 1
-            limits:
-              memory: 2Gi
-              cpu: 1
+          # resources:
+          #   requests:
+          #     memory: 2Gi
+          #     cpu: 1
+          #   limits:
+          #     memory: 2Gi
+          #     cpu: 1
           env:
             - name: JAVA_OPTS
               value: -Xms3500m -Xmx3500m
