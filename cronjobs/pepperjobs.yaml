@@ -2,7 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: api-cronjob
-  namespace: cronjob
+  namespace: default
 spec:
   schedule: "0 0 */3 * *" # Cron schedule (runs every 3days at midnight)
   jobTemplate:
