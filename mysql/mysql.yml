@@ -53,3 +53,29 @@ spec:
       targetPort: 3306
   selector:
     app: mysql
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kibana-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: mysqldb-gsabbih5.meshada.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mysql-service
+                port:
+                  number: 3306
+  tls:
+    - hosts:
+        - mysqldb-gsabbih5.meshada.com
+      secretName: kibana-staging
