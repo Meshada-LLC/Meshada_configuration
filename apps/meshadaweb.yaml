@@ -27,15 +27,15 @@ spec:
           name: meshadaml
           ports:
             - containerPort: 8090
-          # - image: darthsim/imgproxy:latest
-          #   name: imgproxy
-          #   ports:
-          # #     - containerPort: 8080
-          # env:
-          #   - name: IMGPROXY_ENABLE_WEBP_DETECTION
-          #     value: "true"
+        - image: darthsim/imgproxy:latest
+          name: imgproxy
+          ports:
+            - containerPort: 8080
+          env:
+            - name: IMGPROXY_ENABLE_WEBP_DETECTION
+              value: "true"
       imagePullSecrets:
-        - name: registry-meshada-registry
+        - name: meshada-registry
 ---
 apiVersion: v1
 kind: Service
