@@ -40,7 +40,7 @@ spec:
   version: 8.8.2
   nodeSets:
     - name: default
-      count: 1
+      count: 3
       config:
         node.roles: ["master"]
       podTemplate:
@@ -50,29 +50,29 @@ spec:
               env:
                 - name: ES_JAVA_OPTS
                   value: -Xms2g -Xmx2g
-              resources:
-                requests:
-                  memory: 1Gi
-                  cpu: 1
-                limits:
-                  memory: 2Gi
-    - name: datanode
-      count: 1
-      config:
-        node.roles: ["data"]
-      podTemplate:
-        spec:
-          containers:
-            - name: elasticsearch
-              env:
-                - name: ES_JAVA_OPTS
-                  value: -Xms2g -Xmx2g
-              resources:
-                requests:
-                  memory: 1Gi
-                  cpu: 1
-                limits:
-                  memory: 2Gi
+              # resources:
+              #   requests:
+              #     memory: 1Gi
+              #     cpu: 1
+              #   limits:
+              #     memory: 2Gi
+    # - name: datanode
+    #   count: 1
+    #   config:
+    #     node.roles: ["data"]
+    #   podTemplate:
+    #     spec:
+    #       containers:
+    #         - name: elasticsearch
+    #           env:
+    #             - name: ES_JAVA_OPTS
+    #               value: -Xms2g -Xmx2g
+    #           resources:
+    #             requests:
+    #               memory: 1Gi
+    #               cpu: 1
+    #             limits:
+    #               memory: 2Gi
 
   # http:
   #   tls:
@@ -125,7 +125,7 @@ metadata:
   name: kibana-ingress
   namespace: default
   annotations:
-    kubernetes.io/ingress.class: traefik
+    kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
