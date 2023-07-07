@@ -35,7 +35,7 @@ spec:
             - name: IMGPROXY_ENABLE_WEBP_DETECTION
               value: "true"
       imagePullSecrets:
-        - name: registry-meshada-registry
+        - name: meshada-registry
 ---
 apiVersion: v1
 kind: Service
