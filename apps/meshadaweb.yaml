@@ -5,7 +5,7 @@ metadata:
   name: meshada-apps
   namespace: default
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: meshada-apps
