@@ -19,14 +19,14 @@ spec:
           name: meshadaweb
           ports:
             - containerPort: 4000
-        # - image: registry.digitalocean.com/meshada-registry/meshadaapi:7338eed
-        #   name: meshadaapi
-        #   ports:
-        #     - containerPort: 9090
-        # - image: registry.digitalocean.com/meshada-registry/meshadaml:5a52d77
-        #   name: meshadaml
-        #   ports:
-        #     - containerPort: 8090
+        - image: registry.digitalocean.com/meshada-registry/meshadaapi:7338eed
+          name: meshadaapi
+          ports:
+            - containerPort: 9090
+        - image: registry.digitalocean.com/meshada-registry/meshadaml:5a52d77
+          name: meshadaml
+          ports:
+            - containerPort: 8090
         - image: darthsim/imgproxy:latest
           name: imgproxy
           ports:
