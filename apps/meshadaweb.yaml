@@ -159,4 +159,4 @@ spec:
   tls:
     - hosts:
         - www.meshada.com
-      secretName: meshadaweb-secret
+      secretName: meshadaweb-tls
