@@ -108,12 +108,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-staging
     # traefik.ingress.kubernetes.io/router.middlewares: default-mw-admin@kubernetescrd
   name: meshadaweb-ingress
   namespace: default
 spec:
+  ingressClassName: nginx
   rules:
     - host: www.meshada.com
       http:
