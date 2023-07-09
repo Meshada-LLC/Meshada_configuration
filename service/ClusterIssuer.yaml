@@ -45,7 +45,7 @@ metadata:
 spec:
   secretName: meshadaweb-tls
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt-staging
     kind: ClusterIssuer
   dnsNames:
     - www.meshada.com
