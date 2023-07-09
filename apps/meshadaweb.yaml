@@ -157,4 +157,5 @@ spec:
   tls:
     - hosts:
         - www.meshada.com
-      secretName: meshada-secret
+        - meshada.com
+      secretName: meshada-https-secret
