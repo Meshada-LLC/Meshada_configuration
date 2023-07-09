@@ -155,6 +155,7 @@ spec:
                   number: 3002
             path: /search
             pathType: Prefix
+  ingressClassName: nginx
   tls:
     - hosts:
         - www.meshada.com
