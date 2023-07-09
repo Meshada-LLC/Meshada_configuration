@@ -49,6 +49,6 @@ spec:
     kind: ClusterIssuer
   dnsNames:
     - www.meshada.com
-    - meshada.com
+    # - meshada.com
     - kibana-staging.meshada.com
     - enterprise-search.meshada.com
