@@ -155,8 +155,8 @@ spec:
                   number: 3002
             path: /search
             pathType: Prefix
-  # tls:
-  #   - hosts:
-  #       - www.meshada.com
-  #       - meshada.com
-  #     secretName: acme-crt-secret
+  tls:
+    - hosts:
+        - www.meshada.com
+        - meshada.com
+      secretName: meshadaweb-secret
