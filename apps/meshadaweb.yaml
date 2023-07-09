@@ -109,7 +109,8 @@ kind: Ingress
 metadata:
   annotations:
     # kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+  cert-manager.io/cluster-issuer:
+    letsencrypt-staging
     # traefik.ingress.kubernetes.io/router.middlewares: default-mw-admin@kubernetescrd
   name: meshadaweb-ingress
   namespace: default
@@ -158,4 +159,4 @@ spec:
     - hosts:
         - www.meshada.com
         - meshada.com
-      secretName: meshada-https-secret
+      secretName: acme-crt-secret

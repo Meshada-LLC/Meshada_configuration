@@ -154,4 +154,4 @@ spec:
     - hosts:
         - kibana-staging.meshada.com
         - enterprise-search.meshada.com
-      secretName: kibana-staging
+      secretName: acme-crt-secret
