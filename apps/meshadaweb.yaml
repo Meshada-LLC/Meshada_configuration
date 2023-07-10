@@ -113,7 +113,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-staging
     # traefik.ingress.kubernetes.io/router.middlewares: default-mw-admin@kubernetescrd
   name: meshadaweb-ingress
-  # namespace: default
+  namespace: default
 spec:
   # ingressClassName: nginx
   rules:
