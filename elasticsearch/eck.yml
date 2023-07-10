@@ -125,10 +125,10 @@ metadata:
   name: kibana-ingress
   # namespace: default
   annotations:
-    cert-manager.io/issue-temporary-certificate: "true"
-    acme.cert-manager.io/http01-edit-in-place: "true"
+    # cert-manager.io/issue-temporary-certificate: "true"
+    # acme.cert-manager.io/http01-edit-in-place: "true"
     # kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx
   rules:
@@ -156,4 +156,4 @@ spec:
     - hosts:
         - kibana-staging.meshada.com
         - enterprise-search.meshada.com
-      secretName: eck-secret-ingress
+      secretName: eck-secret-ingress-prod
