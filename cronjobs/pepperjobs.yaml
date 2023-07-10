@@ -16,10 +16,10 @@ spec:
                 - /bin/sh
                 - -c
                 - |
-                  curl -s -X GET https://www.meshada.com/api/store/pepperstore & 
-                  curl -s -X GET https://www.meshada.com/api/pepper/find/6196 &
-                  curl -s -X GET https://www.meshada.com/api/pepper/find/5423 &
-                  curl -s -X GET https://www.meshada.com/api/pepper/find/8280 &
-                  curl -s -X GET https://www.meshada.com/api/pepper/find/5691 &
-                  curl -s -X GET https://www.meshada.com/api/pepper/find/8753
+                  curl -s -X GET http://meshada-api-service/api/store/pepperstore & 
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/6196 &
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/5423 &
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/8280 &
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/5691 &
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/8753
           restartPolicy: OnFailure
