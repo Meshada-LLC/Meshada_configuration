@@ -49,7 +49,7 @@ spec:
   ports:
     - protocol: TCP
       port: 4000
-      targetPort: 4000
+      # targetPort: 4000
   selector:
     app: meshada-apps
 ---
@@ -62,7 +62,7 @@ spec:
   ports:
     - protocol: TCP
       port: 9090
-      targetPort: 9090
+      # targetPort: 9090
   selector:
     app: meshada-apps
 ---
@@ -75,7 +75,7 @@ spec:
   ports:
     - protocol: TCP
       port: 8090
-      targetPort: 8090
+      # targetPort: 8090
   selector:
     app: meshada-apps
 ---
@@ -88,7 +88,7 @@ spec:
   ports:
     - protocol: TCP
       port: 8080
-      targetPort: 8080
+      # targetPort: 8080
   selector:
     app: meshada-apps
 ---
