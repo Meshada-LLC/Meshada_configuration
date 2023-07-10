@@ -37,18 +37,18 @@ spec:
 #           ingress:
 #             ingressClassName: nginx
 
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: meshadaweb-certificate
-spec:
-  secretName: meshadaweb-tls
-  issuerRef:
-    name: letsencrypt-staging
-    kind: ClusterIssuer
-  dnsNames:
-    - www.meshada.com
-    # - meshada.com
-    - kibana-staging.meshada.com
-    - enterprise-search.meshada.com
+# ---
+# apiVersion: cert-manager.io/v1
+# kind: Certificate
+# metadata:
+#   name: meshadaweb-certificate
+# spec:
+#   secretName: meshadaweb-tls
+#   issuerRef:
+#     name: letsencrypt-staging
+#     kind: ClusterIssuer
+#   dnsNames:
+#     - www.meshada.com
+#     # - meshada.com
+#     - kibana-staging.meshada.com
+#     - enterprise-search.meshada.com
