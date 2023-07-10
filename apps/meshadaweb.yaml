@@ -134,21 +134,21 @@ spec:
                 name: meshada-api-service
                 port:
                   number: 9090
-            path: /api
+            path: /api(/|$)(.*)
             pathType: Prefix
           - backend:
               service:
                 name: quickstart-es-http
                 port:
                   number: 9200
-            path: /elastic
+            path: /elastic(/|$)(.*)
             pathType: Prefix
           - backend:
               service:
                 name: imgproxy
                 port:
                   number: 8080
-            path: /sig
+            path: /sig(/|$)(.*)
             pathType: Prefix
           - backend:
               service:
