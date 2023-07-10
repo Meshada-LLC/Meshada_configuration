@@ -4,7 +4,7 @@ metadata:
   name: api-cronjob
   namespace: default
 spec:
-  schedule: "0 0 */3 * *" # Cron schedule (runs every 3days at midnight)
+  schedule: "0 0 */3 * *" # Cron schedule (runs every 3 days at midnight)
   jobTemplate:
     spec:
       template:
@@ -15,11 +15,11 @@ spec:
               command:
                 - /bin/sh
                 - -c
-                - |
-                  curl -s -X GET http://meshada-api-service/api/store/pepperstore & 
-                  curl -s -X GET http://meshada-api-service/api/pepper/find/6196 &
-                  curl -s -X GET http://meshada-api-service/api/pepper/find/5423 &
-                  curl -s -X GET http://meshada-api-service/api/pepper/find/8280 &
-                  curl -s -X GET http://meshada-api-service/api/pepper/find/5691 &
+                - >
+                  curl -s -X GET http://meshada-api-service/api/store/pepperstore  
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/6196 
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/5423 
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/8280 
+                  curl -s -X GET http://meshada-api-service/api/pepper/find/5691 
                   curl -s -X GET http://meshada-api-service/api/pepper/find/8753
           restartPolicy: OnFailure
