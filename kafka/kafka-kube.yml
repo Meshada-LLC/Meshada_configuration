@@ -55,9 +55,10 @@ metadata:
   name: kafka-ingress
   namespace: default
   annotations:
-    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
+  ingressClassName: nginx
   rules:
     - host: kafka-staging.meshada.com
       http:
@@ -72,4 +73,4 @@ spec:
   tls:
     - hosts:
         - kafka-staging.meshada.com
-      secretName: kafka-secret
+      secretName: meshadaweb-tls
