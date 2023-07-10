@@ -123,7 +123,7 @@ spec:
                 name: meshada-api-service
                 port:
                   number: 9090
-            path: /api(/|$)(.*)
+            path: /api
             pathType: Prefix
           - backend:
               service:
