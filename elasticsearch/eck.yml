@@ -8,6 +8,17 @@ spec:
     - name: quickstart
       clusterName: qs
   version: 8.8.2
+  podTemplate:
+    spec:
+      containers:
+        - name: logstash
+          resources:
+            requests:
+              memory: 1Gi
+              cpu: 0.5
+            limits:
+              memory: 1Gi
+              cpu: 1
   pipelines:
     - pipeline.id: main
       config.string: |
