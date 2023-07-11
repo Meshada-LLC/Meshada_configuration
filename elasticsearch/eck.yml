@@ -31,6 +31,8 @@ spec:
             limits:
               memory: 1Gi
               cpu: 1
+          command: ["/bin/sh"]
+          args: ["-c", "curl -L -o  /usr/share/logstash/personal/mysql-connector-java-8.0.30.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar"]
           volumeMounts:
             - mountPath: /usr/share/logstash/personal
               name: logstash-lib-pv-claim
@@ -43,7 +45,7 @@ spec:
       config.string: |
         input { 
           jdbc {
-            jdbc_driver_library => "/usr/share/logstash/jdk/lib/mysql-connector-java-8.0.30.jar"
+            jdbc_driver_library => "/usr/share/logstash/personal/mysql-connector-java-8.0.30.jar"
             jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
             jdbc_connection_string => "jdbc:mysql://my-db-pxc-db-haproxy.default.svc.cluster.local/MeshadaDB?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false"
             jdbc_user => "root"
