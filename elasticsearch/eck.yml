@@ -32,7 +32,7 @@ spec:
               memory: 1Gi
               cpu: 1
           command: ["/bin/sh"]
-          args: ["-c","mkdir  /usr/share/logstash/personal ", "curl -L -o  /usr/share/logstash/personal/mysql-connector-java-8.0.30.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar"]
+          args: ["-c","chmod 777 /usr/share/logstash/personal/ ", "curl -L -o  /usr/share/logstash/personal/mysql-connector-java-8.0.30.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar"]
           volumeMounts:
             - mountPath: /usr/share/logstash/personal
               name: logstash-lib-pv-claim
