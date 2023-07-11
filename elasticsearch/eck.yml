@@ -19,10 +19,17 @@ spec:
             limits:
               memory: 1Gi
               cpu: 1
+          volumeMounts:
+            - mountPath: /usr/share/logstash/jdk/lib
+              name: logstash-lib-pv-claim
+      volumes:
+      - name: logstash-lib-pv-claim
+        persistentVolumeClaim:
+          claimName: logstash-lib-pv-claim
   pipelines:
     - pipeline.id: main
       config.string: |
-        input {
+        input { 
           jdbc {
             jdbc_driver_library => "/usr/share/logstash/jdk/lib/mysql-connector-java-8.0.30.jar"
             jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
