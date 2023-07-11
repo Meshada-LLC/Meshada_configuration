@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: logstash-lib-pv-claim
 spec:
-  storageClassName: ""
+  storageClassName: do-block-storage
   accessModes:
     - ReadWriteOnce
   resources:
