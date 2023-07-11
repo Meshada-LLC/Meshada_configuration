@@ -132,28 +132,28 @@ spec:
                 name: meshada-api-service
                 port:
                   number: 9090
-            path: /backend/(.*)
+            path: /backend(/|$)(.*)
             pathType: Prefix
           - backend:
               service:
                 name: quickstart-es-http
                 port:
                   number: 9200
-            path: /elastic/(.*)
+            path: /elastic(/|$)(.*)
             pathType: Prefix
           - backend:
               service:
                 name: imgproxy
                 port:
                   number: 8080
-            path: /imgproxy/(.*)
+            path: /imgproxy(/|$)(.*)
             pathType: Prefix
           - backend:
               service:
                 name: enterprise-search-quickstart-ent-http
                 port:
                   number: 3002
-            path: /search/(.*)
+            path: /search(/|$)(.*)
             pathType: Prefix
   ingressClassName: nginx
   tls:
