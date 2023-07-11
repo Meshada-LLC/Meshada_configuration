@@ -23,22 +23,25 @@ spec:
     - pipeline.id: main
       config.string: |
         input {
-          beats {
-            port => 5044
+          jdbc {
+            # jdbc_driver_library => "/Users/gsabbih/Documents/logstash-8.7.0/myconfigs/mysql-connector-j-8.0.32.jar"
+            jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
+            jdbc_connection_string => "jdbc:mysql://my-db-pxc-db-haproxy.default.svc.cluster.local/MeshadaDB?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false"
+            jdbc_user => "root"
+            jdbc_password =>"SnT+4=guOdh)MYFqWIj"
+            # parameters => { "favorite_artist" => "Beethoven" }
+            schedule => "* * * * *"
+            statement => "SELECT * FROM MeshadaDB.product"
+            tracking_column => "id"
           }
         }
         output {
-          elasticsearch {
-            hosts => [ "${QS_ES_HOSTS}" ]
-            user => "${QS_ES_USER}"
-            password => "${QS_ES_PASSWORD}"
-            cacert => "${QS_ES_SSL_CERTIFICATE_AUTHORITY}"
-          }
-          elastic_app_search {
-            engine => "meshada-search-engine"
-            api_key => "private-rriia9t7gjom9e129cgf2zpa"
-            url => "http://enterprise-search-quickstart-ent-http"
-          }
+          # elastic_app_search {
+          #   engine => "meshada-search-engine"
+          #   api_key => "private-rriia9t7gjom9e129cgf2zpa"
+          #   url => "http://enterprise-search-quickstart-ent-http"
+          # }
+          stdout { codec => json }
         }
 
 ---
