@@ -37,6 +37,9 @@ spec:
             - mountPath: /usr/share/logstash/personal
               name: logstash-lib-pv-claim
               readOnly: false
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       volumes:
       - name: logstash-lib-pv-claim
         persistentVolumeClaim:
