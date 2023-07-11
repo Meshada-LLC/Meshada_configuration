@@ -39,7 +39,7 @@ spec:
           elastic_app_search {
             engine => "meshada-search-engine"
             api_key => "private-rriia9t7gjom9e129cgf2zpa"
-            url => "https://enterprise-search.meshada.com"
+            url => "http://enterprise-search-quickstart-ent-http"
           }
           # stdout { codec => json }
         }
