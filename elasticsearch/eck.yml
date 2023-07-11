@@ -36,12 +36,12 @@ spec:
           }
         }
         output {
-          elastic_app_search {
-            engine => "meshada-search-engine"
-            api_key => "private-rriia9t7gjom9e129cgf2zpa"
-            url => "https://enterprise-search.meshada.com"
-          }
-          # stdout { codec => json }
+          # elastic_app_search {
+          #   engine => "meshada-search-engine"
+          #   api_key => "private-rriia9t7gjom9e129cgf2zpa"
+          #   url => "https://enterprise-search.meshada.com"
+          # }
+          stdout { codec => json }
         }
 
 ---
