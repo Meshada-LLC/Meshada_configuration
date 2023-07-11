@@ -128,6 +128,13 @@ spec:
             pathType: Prefix
           - backend:
               service:
+                name: meshada-web-service
+                port:
+                  number: 4000
+            path: /#(/|$)(.*)
+            pathType: Prefix
+          - backend:
+              service:
                 name: meshada-api-service
                 port:
                   number: 9090
