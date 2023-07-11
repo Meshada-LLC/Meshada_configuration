@@ -32,7 +32,7 @@ spec:
               memory: 1Gi
               cpu: 1
           volumeMounts:
-            - mountPath: /usr/share/logstash/jdk/lib
+            - mountPath: /usr/share/logstash/personal
               name: logstash-lib-pv-claim
       volumes:
       - name: logstash-lib-pv-claim
