@@ -149,12 +149,12 @@ spec:
             path: /search(/|$)(.*)
             pathType: Prefix
           - backend:
-            service:
-              name: meshada-web-service
-              port:
-                number: 4000
-          path: /
-          pathType: Prefix
+              service:
+                name: meshada-web-service
+                port:
+                  number: 4000
+            path: /
+            pathType: Prefix
   ingressClassName: nginx
   tls:
     - hosts:
