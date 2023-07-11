@@ -122,13 +122,6 @@ spec:
         paths:
           - backend:
               service:
-                name: meshada-web-service
-                port:
-                  number: 4000
-            path: /
-            pathType: Prefix
-          - backend:
-              service:
                 name: meshada-api-service
                 port:
                   number: 9090
@@ -155,6 +148,13 @@ spec:
                   number: 3002
             path: /search(/|$)(.*)
             pathType: Prefix
+          - backend:
+            service:
+              name: meshada-web-service
+              port:
+                number: 4000
+          path: /
+          pathType: Prefix
   ingressClassName: nginx
   tls:
     - hosts:
