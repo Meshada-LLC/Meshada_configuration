@@ -97,13 +97,13 @@ spec:
           env:
             - name: NODE_OPTIONS
               value: "--max-old-space-size=2048"
-          resources:
-            requests:
-              memory: 1Gi
-              cpu: 0.5
-            limits:
-              memory: 1Gi
-              cpu: 1
+          # resources:
+          #   requests:
+          #     memory: 1Gi
+          #     cpu: 0.5
+          #   limits:
+          #     memory: 1Gi
+          #     cpu: 1
 ---
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
