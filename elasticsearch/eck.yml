@@ -114,7 +114,7 @@ spec:
     - name: default
       count: 0
       config:
-        node.roles: ["master"]
+        # node.roles: ["master"]
         node.store.allow_mmap: false
       podTemplate:
         spec:
@@ -152,11 +152,6 @@ spec:
   #   tls:
   #     selfSignedCertificate:
   #       disabled: true
-  nodeSets:
-    - name: default
-      count: 0
-      config:
-        node.store.allow_mmap: false
 ---
 apiVersion: enterprisesearch.k8s.elastic.co/v1
 kind: EnterpriseSearch
