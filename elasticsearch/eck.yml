@@ -25,12 +25,12 @@ spec:
       containers:
         - name: logstash
           resources:
-            # requests:
-            #   memory: 1Gi
-            #   cpu: 0.5
-            # limits:
-            #   memory: 1Gi
-            #   cpu: 1
+            requests:
+              memory: 1Gi
+              cpu: 0.5
+            limits:
+              memory: 1Gi
+              cpu: 1
           # command: ["/bin/sh"]
           # args: ["-c", "curl -L -o  /usr/share/logstash/personal/mysql-connector-java-8.0.30.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar"]
           volumeMounts:
@@ -102,8 +102,8 @@ spec:
               memory: 1Gi
               cpu: 0.5
             limits:
-              memory: 2Gi
-              cpu: 2
+              memory: 1Gi
+              cpu: 1
 ---
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
@@ -129,6 +129,7 @@ spec:
                   cpu: 1
                 limits:
                   memory: 2Gi
+                  cpu: 1
     # - name: datanode
     #   count: 1
     #   config:
