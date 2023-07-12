@@ -97,13 +97,13 @@ spec:
           env:
             - name: NODE_OPTIONS
               value: "--max-old-space-size=2048"
-          # resources:
-          #   requests:
-          #     memory: 1Gi
-          #     cpu: 0.5
-          #   limits:
-          #     memory: 2.5Gi
-          #     cpu: 2
+          resources:
+            requests:
+              memory: 1Gi
+              cpu: 0.5
+            limits:
+              memory: 2Gi
+              cpu: 2
 ---
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
@@ -123,12 +123,12 @@ spec:
               env:
                 - name: ES_JAVA_OPTS
                   value: -Xms2g -Xmx2g
-              # resources:
-              #   requests:
-              #     memory: 1Gi
-              #     cpu: 1
-              #   limits:
-              #     memory: 2Gi
+              resources:
+                requests:
+                  memory: 1Gi
+                  cpu: 1
+                limits:
+                  memory: 2Gi
     # - name: datanode
     #   count: 1
     #   config:
@@ -183,11 +183,11 @@ spec:
         - name: enterprise-search
           resources:
             requests:
-            #   memory: 1Gi
-            #   cpu: 0.5
-            # limits:
-            #   memory: 2Gi
-            #   cpu: 1
+              memory: 1Gi
+              cpu: 0.5
+            limits:
+              memory: 2Gi
+              cpu: 1
           env:
             - name: JAVA_OPTS
               value: -Xms3500m -Xmx3500m
