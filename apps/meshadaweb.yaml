@@ -195,6 +195,13 @@ spec:
                   number: 9090
             path: /login
             pathType: Prefix
+          - backend:
+              service:
+                name: meshada-api-service
+                port:
+                  number: 9090
+            path: /authorize
+            pathType: Prefix
   ingressClassName: nginx
   # tls:
   #   - hosts:
