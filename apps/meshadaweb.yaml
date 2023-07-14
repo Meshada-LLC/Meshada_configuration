@@ -20,7 +20,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
-        - image: registry.digitalocean.com/meshada-registry/meshadaapi:9e11ddb
+        - image: registry.digitalocean.com/meshada-registry/meshadaapi:b48c7ef
           name: meshadaapi
           imagePullPolicy: Always
           ports:
