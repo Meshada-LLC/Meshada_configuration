@@ -15,12 +15,12 @@ spec:
         app: meshada-apps
     spec:
       containers:
-        - image: registry.digitalocean.com/meshada-registry/meshadaweb:b1bc0d0
+        - image: registry.digitalocean.com/meshada-registry/meshadaweb:6350f4e
           name: meshadaweb
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
-        - image: registry.digitalocean.com/meshada-registry/meshadaapi:1961491
+        - image: registry.digitalocean.com/meshada-registry/meshadaapi:4a3a7f6
           name: meshadaapi
           imagePullPolicy: Always
           ports:

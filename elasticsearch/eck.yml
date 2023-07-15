@@ -56,8 +56,10 @@ spec:
             jdbc_password =>"SnT+4=guOdh)MYFqWIj"
             # parameters => { "favorite_artist" => "Beethoven" }
             schedule => "0 0  * * *"
-            statement => "SELECT * FROM MeshadaDB.products"
-            tracking_column => "id"
+            statement => "SELECT * FROM MeshadaDB.products WHERE price <> :sql_last_value"
+            use_column_value => true
+            tracking_column => "price"
+            tracking_column_type => "numeric"
           }
         }
         output {
