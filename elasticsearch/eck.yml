@@ -55,7 +55,7 @@ spec:
             jdbc_user => "root"
             jdbc_password =>"SnT+4=guOdh)MYFqWIj"
             # parameters => { "favorite_artist" => "Beethoven" }
-            schedule => "0 0 * * *"
+            schedule => "* * * * *"
             statement => "SELECT * FROM MeshadaDB.products WHERE price <> :sql_last_value"
             use_column_value => true
             tracking_column => "price"
@@ -65,7 +65,7 @@ spec:
         output {
           elastic_app_search {
             engine => "meshada-search-engine"
-            api_key => "private-k58zfkwknz3wsemu9ayw1g6t"
+            api_key => "private-jdxdkq8o2woujxx5zibbq918"
             url => "http://enterprise-search-quickstart-ent-http:3002"
           }
           # stdout { codec => json }
