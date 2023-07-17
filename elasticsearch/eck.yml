@@ -128,7 +128,7 @@ spec:
         # node.ml: true
         # node.transform: true
         node.roles: ["data"]
-        node.remote_cluster_client: false
+        # node.remote_cluster_client: false
       # podTemplate:
       #   spec:
       #     containers:
