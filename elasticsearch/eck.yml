@@ -113,11 +113,22 @@ metadata:
 spec:
   version: 8.8.2
   nodeSets:
-    - name: default
+    - name: master
+      count: 1
+      config:
+        node.roles: ["master"]
+        node.store.allow_mmap: false
+    - name: data
       count: 2
       config:
-        # node.roles: ["master"]
-        node.store.allow_mmap: false
+        # On Elasticsearch versions before 7.9.0, replace the node.roles configuration with the following:
+        # node.master: false
+        # node.data: true
+        # node.ingest: true
+        # node.ml: true
+        # node.transform: true
+        node.roles: ["data"]
+        node.remote_cluster_client: false
       # podTemplate:
       #   spec:
       #     containers:
