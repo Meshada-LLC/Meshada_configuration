@@ -15,7 +15,7 @@ spec:
         app: meshada-apps
     spec:
       containers:
-        - image: registry.digitalocean.com/meshada-registry/meshadaweb:59d174a
+        - image: registry.digitalocean.com/meshada-registry/meshadaweb:b471fad
           name: meshadaweb
           imagePullPolicy: Always
           ports:
