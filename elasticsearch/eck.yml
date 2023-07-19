@@ -55,7 +55,7 @@ spec:
             jdbc_user => "root"
             jdbc_password =>"SnT+4=guOdh)MYFqWIj"
             # parameters => { "favorite_artist" => "Beethoven" }
-            schedule => "0 0 * * *"
+            schedule => "* * * * *"
             statement => "SELECT * FROM MeshadaDB.products WHERE price <> :sql_last_value"
             use_column_value => true
             tracking_column => "price"
