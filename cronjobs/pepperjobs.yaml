@@ -8,8 +8,9 @@ spec:
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
-  schedule: "* * * * *" # Cron schedule (runs every 3 days at midnight)
-  # schedule: "0 0 */3 * *" # Cron schedule (runs every 3 days at midnight)
+  # schedule: "* * * * *" # Cron schedule (runs every 3 days at midnight)
+  schedule: "0 0 */3 * *" # Cron schedule (runs every 3 days at midnight)
+  startingDeadlineSeconds: 86400 # 24 hours in seconds (adjust as needed)
   jobTemplate:
     spec:
       template:
@@ -21,6 +22,5 @@ spec:
                 - /bin/sh
                 - -c
                 - >
-                  curl -s -X GET http://meshada-api-service:9090/api/pepper/find/8360 
-                  curl -s -X GET http://meshada-api-service:9090/api/pepper/find/6196
+                  curl -s -X GET http://meshada-api-service:9090/api/pepper/find/all
           restartPolicy: OnFailure
