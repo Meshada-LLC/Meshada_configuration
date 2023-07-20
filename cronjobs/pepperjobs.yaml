@@ -1,9 +1,13 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: myjob
+  name: callout
   namespace: default
 spec:
+  # schedule: "*/1 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
   schedule: "* * * * *" # Cron schedule (runs every 3 days at midnight)
   # schedule: "0 0 */3 * *" # Cron schedule (runs every 3 days at midnight)
   jobTemplate:
@@ -11,7 +15,7 @@ spec:
       template:
         spec:
           containers:
-            - name: api-curl
+            - name: callout
               image: buildpack-deps:curl
               command:
                 - /bin/sh
