@@ -10,7 +10,7 @@ spec:
   failedJobsHistoryLimit: 1
   # schedule: "* * * * *" # Cron schedule (runs every 3 days at midnight)
   schedule: "0 0 */3 * *" # Cron schedule (runs every 3 days at midnight)
-  startingDeadlineSeconds: 86400 # 24 hours in seconds (adjust as needed)
+  # startingDeadlineSeconds: 86400 # 24 hours in seconds (adjust as needed)
   jobTemplate:
     spec:
       template:
