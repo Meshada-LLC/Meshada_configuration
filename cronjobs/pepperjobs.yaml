@@ -16,7 +16,7 @@ spec:
         spec:
           containers:
             - name: callout
-              image: alpine:latest
+              image: buildpack-deps:curl
               command:
                 - /bin/sh
                 - -c
