@@ -4,7 +4,8 @@ metadata:
   name: myjob
   namespace: default
 spec:
-  schedule: "0 0 */3 * *" # Cron schedule (runs every 3 days at midnight)
+  schedule: "* * * * *" # Cron schedule (runs every 3 days at midnight)
+  # schedule: "0 0 */3 * *" # Cron schedule (runs every 3 days at midnight)
   jobTemplate:
     spec:
       template:
