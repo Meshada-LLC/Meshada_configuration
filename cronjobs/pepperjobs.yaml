@@ -21,5 +21,6 @@ spec:
                 - /bin/sh
                 - -c
                 - >
-                  curl -s -X GET http://meshada-api-service:9090/api/pepper/find/8360
+                  curl -s -X GET http://meshada-api-service:9090/api/pepper/find/8360 
+                  curl -s -X GET http://meshada-api-service:9090/api/pepper/find/6196
           restartPolicy: OnFailure
