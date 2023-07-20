@@ -64,7 +64,7 @@ spec:
         }
         output {
           elastic_app_search {
-            engine => "meshada-search-engine"
+            engine => "meshada-main-search-engine"
             api_key => "private-jdxdkq8o2woujxx5zibbq918"
             url => "http://enterprise-search-quickstart-ent-http:3002"
           }
