@@ -64,8 +64,8 @@ spec:
         }
         output {
           elastic_app_search {
-            engine => "meshada-main-search-engine"
-            api_key => "private-jdxdkq8o2woujxx5zibbq918"
+            engine => "meshada-search-engine"
+            api_key => "private-sds25541mkgfyhufra3dj9w4"
             url => "http://enterprise-search-quickstart-ent-http:3002"
           }
           # stdout { codec => json }
