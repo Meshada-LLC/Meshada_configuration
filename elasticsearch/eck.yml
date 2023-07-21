@@ -114,7 +114,7 @@ spec:
   version: 8.8.2
   nodeSets:
     - name: master
-      count: 3
+      count: 0
       config:
         node.roles: ["master"]
         # node.store.allow_mmap: false
@@ -127,7 +127,7 @@ spec:
                 runAsUser: 0
               command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
     - name: data
-      count: 3
+      count: 0
       config:
         # On Elasticsearch versions before 7.9.0, replace the node.roles configuration with the following:
         # node.master: false
@@ -168,7 +168,7 @@ metadata:
   name: enterprise-search-quickstart
 spec:
   version: 8.8.2
-  count: 2
+  count: 0
   elasticsearchRef:
     name: quickstart
   http:
