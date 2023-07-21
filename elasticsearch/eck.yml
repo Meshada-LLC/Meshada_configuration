@@ -144,11 +144,11 @@ spec:
         # node.remote_cluster_client: false
       podTemplate:
         spec:
-              containers:
-                - name: elasticsearch
-                  env:
-                    - name: ES_JAVA_OPTS
-                      value: -Xms2g -Xmx2g
+           containers:
+              - name: elasticsearch
+                env:
+                  - name: ES_JAVA_OPTS
+                    value: -Xms2g -Xmx2g
           #         resources:
           #           requests:
           #             memory: 1Gi
