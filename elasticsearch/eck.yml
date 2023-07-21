@@ -125,12 +125,12 @@ spec:
               env:
                 - name: ES_JAVA_OPTS
                   value: -Xms2g -Xmx2g
-          initContainers:
-            - name: sysctl
-              securityContext:
-                privileged: true
-                runAsUser: 0
-              command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
+          # initContainers:
+          #   - name: sysctl
+          #     securityContext:
+          #       privileged: true
+          #       runAsUser: 0
+          #     command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
     - name: data
       count: 1
       config:
@@ -144,11 +144,11 @@ spec:
         # node.remote_cluster_client: false
       podTemplate:
         spec:
-           containers:
-              - name: elasticsearch
-                env:
-                  - name: ES_JAVA_OPTS
-                    value: -Xms2g -Xmx2g
+          containers:
+            - name: elasticsearch
+              env:
+                - name: ES_JAVA_OPTS
+                  value: -Xms2g -Xmx2g
           #         resources:
           #           requests:
           #             memory: 1Gi
@@ -156,12 +156,12 @@ spec:
           #           limits:
           #             memory: 2Gi
           #             cpu: 1
-          initContainers:
-            - name: sysctl
-              securityContext:
-                privileged: true
-                runAsUser: 0
-              command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
+          # initContainers:
+          #   - name: sysctl
+          #     securityContext:
+          #       privileged: true
+          #       runAsUser: 0
+          #     command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
   # http:
   #   tls:
   #     selfSignedCertificate:
