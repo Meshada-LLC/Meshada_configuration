@@ -168,7 +168,7 @@ metadata:
   name: enterprise-search-quickstart
 spec:
   version: 8.8.2
-  count: 1
+  count: 2
   elasticsearchRef:
     name: quickstart
   http:
