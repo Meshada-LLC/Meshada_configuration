@@ -54,18 +54,17 @@ spec:
             jdbc_connection_string => "jdbc:mysql://my-db-pxc-db-haproxy.default.svc.cluster.local/MeshadaDB?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false"
             jdbc_user => "root"
             jdbc_password =>"SnT+4=guOdh)MYFqWIj"
-            # parameters => { "favorite_artist" => "Beethoven" }
-            schedule => "* * * * *"
-            statement => "SELECT * FROM MeshadaDB.products WHERE price <> :sql_last_value"
-            use_column_value => true
-            tracking_column => "price"
+            schedule => "0 0 * * *"
+            statement => "SELECT * FROM MeshadaDB.products
+            # use_column_value => true
+            # tracking_column => "price"
             tracking_column_type => "numeric"
           }
         }
         output {
           elastic_app_search {
             engine => "meshada-search-engine"
-            api_key => "private-sds25541mkgfyhufra3dj9w4"
+            api_key => "private-k97sxs3t9um9uabfdsnoowk9"
             url => "http://enterprise-search-quickstart-ent-http:3002"
           }
           # stdout { codec => json }
