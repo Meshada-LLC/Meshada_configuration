@@ -56,9 +56,9 @@ spec:
             jdbc_password =>"SnT+4=guOdh)MYFqWIj"
             schedule => "0 0 * * *"
             statement => "SELECT * FROM MeshadaDB.products"
-            # use_column_value => true
-            # tracking_column => "id"
-            # tracking_column_type => "numeric"
+            use_column_value => true
+            tracking_column => "id"
+            tracking_column_type => "numeric"
           }
         }
         output {
