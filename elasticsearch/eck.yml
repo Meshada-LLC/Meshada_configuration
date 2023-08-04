@@ -54,7 +54,7 @@ spec:
             jdbc_connection_string => "jdbc:mysql://my-db-pxc-db-haproxy.default.svc.cluster.local/MeshadaDB?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false"
             jdbc_user => "root"
             jdbc_password =>"SnT+4=guOdh)MYFqWIj"
-            schedule => "* * * * *"
+            schedule => "0 0 * * *"
             statement => "SELECT * FROM MeshadaDB.products"
             use_column_value => true
             tracking_column => "id"
