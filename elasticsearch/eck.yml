@@ -81,7 +81,7 @@ spec:
   #   service:
   #     spec:
   #       type: LoadBalancer
-  count: 1
+  count: 0
   elasticsearchRef:
     name: quickstart
   enterpriseSearchRef:
@@ -113,7 +113,7 @@ spec:
   version: 8.8.2
   nodeSets:
     - name: master
-      count: 2
+      count: 0
       config:
         node.roles: ["master"]
         node.store.allow_mmap: false
@@ -131,7 +131,7 @@ spec:
       #       runAsUser: 0
       #     command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
     - name: data
-      count: 2
+      count: 0
       config:
         # On Elasticsearch versions before 7.9.0, replace the node.roles configuration with the following:
         # node.master: false
@@ -172,7 +172,7 @@ metadata:
   name: enterprise-search-quickstart
 spec:
   version: 8.8.2
-  count: 1
+  count: 0
   elasticsearchRef:
     name: quickstart
   http:
@@ -201,41 +201,41 @@ spec:
             - name: JAVA_OPTS
               value: -Xms3500m -Xmx3500m
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: kibana-ingress
-  # namespace: default
-  annotations:
-    # cert-manager.io/issue-temporary-certificate: "true"
-    # acme.cert-manager.io/http01-edit-in-place: "true"
-    # kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-spec:
-  ingressClassName: nginx
-  rules:
-    - host: kibana-staging.meshada.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: quickstart-kb-http
-                port:
-                  number: 5601
-    - host: enterprise-search.meshada.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: enterprise-search-quickstart-ent-http
-                port:
-                  number: 3002
-  tls:
-    - hosts:
-        - kibana-staging.meshada.com
-        - enterprise-search.meshada.com
-      secretName: eck-secret-ingress-prod
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: kibana-ingress
+#   # namespace: default
+#   annotations:
+#     # cert-manager.io/issue-temporary-certificate: "true"
+#     # acme.cert-manager.io/http01-edit-in-place: "true"
+#     # kubernetes.io/ingress.class: nginx
+#     cert-manager.io/cluster-issuer: letsencrypt-prod
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#     - host: kibana-staging.meshada.com
+#       http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: quickstart-kb-http
+#                 port:
+#                   number: 5601
+#     - host: enterprise-search.meshada.com
+#       http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: enterprise-search-quickstart-ent-http
+#                 port:
+#                   number: 3002
+#   tls:
+#     - hosts:
+#         - kibana-staging.meshada.com
+#         - enterprise-search.meshada.com
+#       secretName: eck-secret-ingress-prod
