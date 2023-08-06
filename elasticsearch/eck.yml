@@ -16,9 +16,9 @@ metadata:
   name: quickstart
 spec:
   count: 1
-  elasticsearchRefs:
-    - name: quickstart
-      clusterName: qs
+  # elasticsearchRefs:
+  #   - name: quickstart
+  #     clusterName: qs
   version: 8.8.2
   podTemplate:
     spec:
