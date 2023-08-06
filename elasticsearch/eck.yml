@@ -54,7 +54,7 @@ spec:
             jdbc_connection_string => "jdbc:mysql://my-db-pxc-db-haproxy.default.svc.cluster.local/MeshadaDB?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false"
             jdbc_user => "root"
             jdbc_password =>"SnT+4=guOdh)MYFqWIj"
-            schedule => "0 0 * * *"
+            schedule => "* * * * *"
             statement => "SELECT * FROM MeshadaDB.products"
             use_column_value => true
             tracking_column => "id"
@@ -64,8 +64,8 @@ spec:
         output {
           elastic_app_search {
             engine => "meshada-search-engine"
-            api_key => "private-k97sxs3t9um9uabfdsnoowk9"
-            url => "http://enterprise-search-quickstart-ent-http:3002"
+            api_key => "private-zr2f9iefojn866g2vg27y9vk"
+            url => "https://my-deployment-e27579.ent.us-central1.gcp.cloud.es.io"
           }
           # stdout { codec => json }
         }
