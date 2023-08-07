@@ -171,7 +171,7 @@ metadata:
     # acme.cert-manager.io/http01-edit-in-place: "true"
     # kubernetes.io/ingress.class: nginx
     # nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-    # nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # traefik.ingress.kubernetes.io/router.middlewares: default-mw-admin@kubernetescrd
   name: meshadaweb-ingress
@@ -194,14 +194,14 @@ spec:
                 name: meshada-api-service
                 port:
                   number: 9090
-            path: /login
+            path: /login(/|$)(.*)
             pathType: Prefix
           - backend:
               service:
                 name: meshada-api-service
                 port:
                   number: 9090
-            path: /authorize
+            path: /authorize(/|$)(.*)
             pathType: Prefix
   ingressClassName: nginx
   # tls:
